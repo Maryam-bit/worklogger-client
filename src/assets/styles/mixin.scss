@@ -1,0 +1,111 @@
+@mixin text($fontSize, $color, $fontWeight){
+    font-size: $fontSize;
+    color: $color;
+    font-weight: $fontWeight;
+}
+
+@mixin scrollBar(){
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgb(191, 191, 191);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(177, 176, 176);
+    }
+}
+
+@mixin lgCardShadow(){
+    box-shadow: 33px 38px 39px -29px rgba(0,0,0,0.42) !important;
+    -webkit-box-shadow: 33px 38px 39px -29px rgba(0,0,0,0.42) !important;
+    -moz-box-shadow: 33px 38px 39px -29px rgba(0,0,0,0.42) !important;
+}
+
+@mixin buttonStyling($bg_theme, $width, $height, $radius){
+    background: $bg_theme !important;
+    height: $height;
+    width: $width;
+    border-radius: $radius;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 2px;
+    transition: 0.4s;
+    color: rgb(245, 245, 245);
+    border: none;
+}
+
+
+
+@mixin smCardShadow(){
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.20) !important;
+	-webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.20);
+	-moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.20)
+}
+
+@mixin dflex($justifyContent, $alignItems, $flexDirection){
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+// box-shadow: -2px 2px 5px 1px rgba(0,0,0,0.37);
+// -webkit-box-shadow: -2px 2px 5px 1px rgba(0,0,0,0.37);
+// -moz-box-shadow: -2px 2px 5px 1px rgba(0,0,0,0.37);
+
+
+@mixin inputStyling($bgcolor){
+    border: none;
+    width: 100%;
+    padding: 14px 20px 14px 20px;
+    margin: 4px 0px 20px 0px;
+    background-color: $bgcolor;
+    border-radius: 6px;
+    display: block;
+    color: $dark-theme-text-900;
+    &::placeholder{
+        color: $dark-theme-text-900;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+@mixin circularInput($textcolor, $bgcolor, $bordercolor) {
+    border: 1px solid $bordercolor;
+    width: auto;
+    padding: 14px 20px 14px 20px;
+    margin: 0px 10px 0px 10px;
+    background-color: $bgcolor;
+    border-radius: 30px;
+    display: block;
+    color: $textcolor;
+    padding: 7px 14.5px 7px 14.5px;
+    &::placeholder{
+        color: $dark-theme-text-900;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+@mixin squareInput($textcolor, $bgcolor, $bordercolor) {
+    border: 1px solid $bordercolor;
+    width: auto;
+    padding: 14px 20px 14px 20px;
+    margin: 0px 10px 0px 10px;
+    background-color: $bgcolor;
+    border-radius: 7px;
+    display: block;
+    padding: 7px 14.5px 7px 14.5px;
+    &::placeholder{
+        color: $dark-theme-text-900;
+    }
+    &:focus{
+        outline: none;
+    }
+}

@@ -1,30 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div
+    :class="[
+      `theme${colorScheme} 
+    theme-size${sizeScheme}`,
+      darkTheme ? 'dark-theme' : '',
+    ]"
+  >
+    <div class="app-container">
+      <View :isLoggedin="isLoggedin" />
+    </div>
   </div>
-  <router-view />
 </template>
 
+<script setup>
+import View from "./views/View.vue";
+import { ref } from "vue";
+const colorScheme = ref(1);
+const sizeScheme = ref(1);
+const darkTheme = ref(false);
+const isLoggedin = ref(true);
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "./assets/styles/main.scss";
+@import "./assets/styles/responsive.scss";
 </style>

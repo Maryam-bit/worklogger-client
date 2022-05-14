@@ -1,0 +1,75 @@
+@mixin theme_sizes($font-sm, $font-md, $font-lg) {
+	.login {
+		.login-intro-area {
+			.login-intro-area-sec {
+				.login-intro-heading {
+					font-size: $font-lg;
+				}
+                .login-intro-text {
+					font-size: $font-md;
+                }
+			}
+		}
+	}
+	
+	// ****************** components ***********************
+	.login-form {
+		.login-form-heading {
+            font-size: $font-lg;
+		}
+		.login-form-label {
+            font-size: $font-sm;
+		}
+		.login-form-button {
+			font-size: $font-sm;
+		}
+        .login-form-input {
+            font-size: $font-sm;
+        }
+		.custom-checkbox {
+			label {
+                font-size: $font-sm;
+			}
+		}
+	}
+
+	.sidebar {
+		.small-sidebar, .full-sidebar {
+            font-size: $font-sm;
+			a {
+                font-size: $font-sm;
+			}
+		}
+	}
+
+	.breadcrumbs {
+		&>ul>li a, &>ul>li .input_edit_container .input-group>span {
+            font-size: $font-sm;
+		}
+	}
+    .app-searchbox {
+        font-size: $font-sm;
+        input {
+            font-size: $font-sm;
+        }
+        button {
+            font-size: $font-sm;
+        }
+    }
+    .app-btn {
+        font-size: $font-sm;
+    }
+    .app-table {
+        .table {
+           font-size: $font-sm;
+        }
+    }
+    .topbar {
+        input {
+            font-size: $font-sm;
+        }
+        button {
+            font-size: $font-sm;
+        }
+    }
+}

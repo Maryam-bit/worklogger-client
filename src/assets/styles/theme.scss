@@ -1,0 +1,177 @@
+@mixin theme_colors($theme_color, $card_bg){
+    .app-btn {
+        background-color: $theme_color;
+     }
+    .login {
+        .login-intro-area {
+            background-color: rgba($color: $theme_color, $alpha: 1);
+        }
+    }
+    input[type=radio]:checked + label{
+        background:$theme_color;
+        border: 3px solid rgba($theme_color, 0.3) !important;
+    }
+    .custom-checkbox{
+        input[type=checkbox] {
+            border-color: $theme_color;
+        }
+        input[type=checkbox]:after {
+            background-color: $theme_color;
+        }
+    }
+
+    .breadcrumbs {
+        &>ul{
+            float: left;
+            width: 100%;
+            margin: 0;
+            list-style-type: none;
+            &>li{
+                float: left;
+                margin-bottom: 0;
+                margin-right: 10px;
+                position: relative;
+                a {
+                    text-decoration: none;
+                }
+                &:last-child a {
+                    background: $theme_color;
+                    color: $text-color-100;
+                }
+                &:first-child::before {
+                    display: none;
+                }
+                &::before {
+                    position: absolute;
+                    left: -10px;
+                    top: 50%;
+                    width: 5px;
+                    height: 5px;
+                    content: "";
+                    background: #dae4ea;
+                  
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    border-radius: 50%;
+                  }
+            }
+        }
+    }   
+
+    .topbar {
+        button  {
+            border: 2px solid $theme_color;
+        }
+    }
+}
+
+@mixin theme_skin() {
+    color: $dark-theme-text-500;
+	background-image: url("assets/images/bgimg.jpg");
+	.app-container{
+		background-color: rgba($color: $dark-theme-bg-900, $alpha: 1);
+	}
+	hr {
+		color: $dark-theme-bg-300 !important;
+	}
+	.login {
+		.login-intro-area {
+			.login-intro-area-sec {
+				.login-intro-heading {
+					color: $dark-theme-text-500;
+				}
+				.login-intro-text {
+					color: $dark-theme-text-500;
+				}
+			}
+		}
+	}
+	
+	// ****************** components ***********************
+	.login-form {
+		.login-form-heading {
+			color: $dark-theme-text-500;
+		}
+		.login-form-label {
+			color: $dark-theme-text-700;
+		}
+		.login-form-input {
+			@include inputStyling($dark-theme-bg-500);
+		}
+		.login-form-button {
+			&:hover {
+				width: 120px;
+				height: 40px;
+				box-shadow: 2px 2px 7px #000000, -4px -4px 4px rgb(37, 37, 37);
+			}
+		}
+		.custom-checkbox {
+			label {
+				color: $dark-theme-text-700;
+			}
+		}
+	}
+
+	.sidebar {
+		.divider {
+			// background-color: rgba(0, 0, 0, 0.02) !important;
+		}
+		.small-sidebar, .full-sidebar {
+            border-right: 1px solid $dark-theme-bg-700;
+			// background-color: $dark-theme-bg-700;
+			color: $dark-theme-text-500;
+			a, .dropdown {
+				color:  $dark-theme-text-500;
+                border-color: $dark-theme-bg-700 !important;
+			}
+		}
+	}
+
+	.topbar .navbar {
+        border-bottom: 1px solid $dark-theme-bg-700;
+		// background-color: $dark-theme-bg-700 !important;
+		input {
+			background-color: $dark-theme-bg-500;
+			border: none;
+		}
+        button {
+            color: $dark-theme-text-500;
+        }
+	}
+	.breadcrumbs {
+		&>ul>li a, &>ul>li .input_edit_container .input-group>span {
+			background: $dark-theme-bg-500;
+			color: $dark-theme-text-700;
+			border-color: $dark-theme-bg-300;
+		}
+        &>ul {
+            &>li {
+                &:last-child a {
+                    border: none;
+                    padding: 8px 17px;
+                }
+            }
+        }
+	}
+    .app-searchbox {
+        input {
+            background-color: $dark-theme-bg-500;
+			border-color: $dark-theme-bg-300;
+            color: $dark-theme-text-500;
+            &::placeholder {
+                color: $dark-theme-text-900;
+            }
+        }
+    }
+    .app-table {
+        .table {
+           color: $dark-theme-text-700 !important;
+        }
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            color: $dark-theme-text-700 !important;
+            background-color: $dark-theme-bg-700;
+        }
+    }
+}

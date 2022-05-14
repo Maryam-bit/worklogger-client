@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@700&display=swap');
+@import "~ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import './variable.scss';
+@import './mixin.scss';
+@import './theme.scss';
+@import './themeSize.scss';
+@include scrollBar();
+
+// ==================theme colors ======================
+.theme1{
+	@include theme_colors($theme-color1, rgb(230, 230, 230));
+}
+
+.theme2{
+	@include theme_colors($theme-color2, #ecf4ff)
+}
+
+.theme3{
+	@include theme_colors($theme-color3, #f4eeff)
+}
+
+.theme4{
+	@include theme_colors($theme-color4, #eeffff)
+}
+
+.theme5{
+	@include theme_colors($theme-color5, #e9f7ff)
+}
+
+.theme6{
+	@include theme_colors($theme-color6, #ecf4ff)
+}
+
+.theme7{
+	@include theme_colors($theme-color7, #ecf2ff)
+}
+
+.theme8{
+	@include theme_colors($theme-color8 ,#fcfff0)
+}
+
+.theme9{
+	@include theme_colors($theme-color9, #fff9ee)
+}
+
+.theme10{
+	@include theme_colors($theme-color10, #fff3f3)
+}
+
+.theme-size1 {
+	@include theme_sizes($font-sm-alpha, $font-sm-beta, $font-sm-gamma)
+}
+
+.theme-size2 {
+	@include theme_sizes($font-md-alpha, $font-md-beta, $font-md-gamma)
+}
+
+.theme-size3 {
+	@include theme_sizes($font-lg-alpha, $font-lg-beta, $font-lg-gamma)
+}
+
+.dark-theme {
+	@include theme_skin()
+}
+
+body {
+	margin: 0px;
+	overflow-x: hidden;
+	// background-image: url("assets/images/bgimg.jpg");
+}
+
+.app-container {
+	height: 100vh;
+	background-color: rgba($color: $light-theme-bg-900, $alpha: 1);
+}
+
+*{
+	font-family: 'Poppins', sans-serif;
+}
+
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+///////////////// LIGHT THEME ////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+// ******************* views *********************
+// =================== login =====================
+.login {
+	width: 100%;
+    height: 100vh;
+	@include dflex(null, null, row);
+	background-image: url("assets/images/bgimg.jpg");
+	background-repeat: no-repeat;
+	background-size: 35% 100%;
+	.login-intro-area {
+		padding: 0rem 2rem 0rem 2rem;
+		width: 35%;
+		height: 100%;
+		display: flex;
+		@include dflex(center, center, row);
+		text-align: center;
+		.login-intro-area-sec {
+			.login-intro-heading {
+				color: $text-color-300;
+				font-family: 'Supermercado One', cursive;
+			}
+			.login-intro-text {
+				color: $text-color-300;
+			}
+		}
+	}
+	.login-form-area {
+		width: 65%;
+		text-align: center;
+		@include dflex(center, center, column);
+	}
+}
+
+
+// ****************** components ***********************
+.login-form {
+	form {
+		margin-left: -2.6rem;
+	}
+	.login-form-heading {
+		color: $text-color-900;
+		margin-bottom: 1rem;
+		font-family: 'Supermercado One', cursive;
+	}
+	.login-form-label {
+		color: $text-color-900;
+		float: left;
+		width: 100%;
+		text-align: left !important;
+	}
+	.login-form-input {
+		@include inputStyling($light-theme-bg-700);
+	}
+	.login-form-button {
+		@include buttonStyling(null, 95px, 33px, 20px);
+		&:hover {
+			width: 120px;
+			height: 40px;
+			box-shadow: 2px 2px 7px #cbced1, -4px -4px 4px white;
+		}
+	}
+	.custom-checkbox {
+		margin-top: 5px;
+		label {
+			display: inline;
+			position: relative;
+			top: -5px;
+			color: $text-color-900;
+		}
+	}
+}
+
+.sidebar {
+	background-color: $theme-color1;
+	.divider {
+		// background-color: rgba(0, 0, 0, 0.009) !important;
+	}
+	.small-sidebar, .full-sidebar {
+		border-right: 1px solid $text-color-300;
+		overflow-y: auto;
+		// background-color: rgba($color: $light-theme-bg-800, $alpha: 1);
+		color: $text-color-900;
+		a, .dropdown {
+			color: #fafafa;
+			border-color:rgba($light-theme-bg-500, 0.1) !important;
+		}
+	}
+}
+
+.topbar .navbar {
+	// background-color: $light-theme-bg-800 !important;
+	border-bottom: 1px solid $text-color-300;
+	input {
+		background-color: $light-theme-bg-600;
+		@include squareInput(null, null, $light-theme-bg-700)
+	}
+	button {
+		background: none !important;
+		color: $text-color-700;
+	};
+}
+
+.breadcrumbs {
+    float: left;
+    width: 100%;
+    margin-bottom: 40px;
+    &>ul>li a, &>ul>li .input_edit_container .input-group>span {
+		float: left;
+		background: $light-theme-bg-600;
+		color: $text-color-700;
+		border:  1px solid $light-theme-bg-700;
+		border-radius: 30px;
+		font-weight: 400;
+		padding: 7px 17px;
+		letter-spacing: 0px;
+		cursor: pointer;
+        -webkit-box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.05);
+        -ms-box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.05);
+        -o-box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.05);
+        box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.05);
+    }
+	& > ul > li::before {
+		display: none !important;
+	}
+    &>ul{
+        float: left;
+        width: 100%;
+        margin: 0;
+		list-style-type: none;
+		padding: 0px;
+        &>li{
+            float: left;
+            margin-bottom: 0;
+            margin-right: 10px;
+            position: relative;
+			a {
+				text-decoration: none;
+			}
+            &:last-child a {
+                color: $text-color-100;
+            }
+            &:first-child::before {
+                display: none;
+            }
+            &::before {
+                position: absolute;
+                left: -10px;
+                top: 50%;
+                width: 5px;
+                height: 5px;
+                content: "";
+                background: #dae4ea;
+              
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                border-radius: 50%;
+              }
+        }
+    }
+}
+
+.app-table {
+	.table {
+		thead tr {
+			th {
+				padding: 14px 10px;
+				cursor: pointer;
+			}
+		}
+		tbody td {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+}
+
+.custom-checkbox {
+	.checkbox-label-text{
+		display: block;
+	}
+	label {
+		display: inline-block;
+		cursor: pointer;
+	}
+	input[type=checkbox]{
+		padding-left: 5px;
+		padding-right: 2px;
+		width: 17px;
+		height: 17px;
+		margin-right: 8px;
+		margin-left: 6px;
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	input[type=checkbox]:after {
+		content: " ";
+		visibility: visible;
+		position: relative;
+		top: -3px;
+		left: 0px;
+		color: #fff !important;
+		font-weight: bolder;
+		border-radius: 3px;
+	}
+
+	input[type=radio]:checked + label{
+        color: white;
+    }
+	input[type=checkbox]:checked:after {
+		font-size: $font-md-alpha;
+		content: "\2713";
+		padding-top: 0px;
+		padding-bottom:0px;
+		color: white !important;
+		padding-left: 4px;
+		padding-right: 4px;
+		margin-left: 0px;
+	}
+}
+
+hr {
+	color: $text-color-400 !important;
+}
+
+.app-searchbox {
+	label {
+		margin-right: 5px;
+	}
+	button {
+		@include buttonStyling(null, 73px, 33px, 20px);
+	}
+	input {
+		@include circularInput($text-color-900, null, $light-theme-bg-700);
+		display: inline-block;
+		margin-left: 0px;
+		&::placeholder {
+			color: $text-color-700
+		}
+	}
+}
+
+.app-btn {
+	@include buttonStyling(null, 105px, 33px, 20px);
+}

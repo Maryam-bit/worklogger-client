@@ -6,12 +6,10 @@
           <searchbox />
         </div>
         <div class="col-md-4 text-end float-right">
-          <button class="app-btn">
-            Export
-          </button>
+          <button class="app-btn">Export</button>
         </div>
       </div>
-      <hr>
+      <hr />
       <div class="row">
         <app-table />
       </div>

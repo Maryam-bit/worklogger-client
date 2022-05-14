@@ -4,7 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import "bootstrap/dist/css/bootstrap.css";
-const app = createApp(App);
+const app = createApp(App).use(Quasar, quasarUserOptions);
 
 import LoginForm from "./components/LoginForm.vue";
 import TheSidebar from "./components/TheSidebar.vue";
@@ -12,6 +12,8 @@ import TheTopbar from "./components/TheTopbar.vue";
 import Breadcrumbs from "./components/Breadcrumbs.vue";
 import SearchBox from "./components/SearchBox.vue";
 import Table from "./components/Table.vue";
+import { Quasar } from "quasar";
+import quasarUserOptions from "./quasar-user-options";
 
 app.component("login-form", LoginForm);
 app.component("sidebar", TheSidebar);

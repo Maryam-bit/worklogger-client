@@ -149,7 +149,7 @@
       </button>
       <!-- <span class="appName">{{ sidebarMenus[0][0].appName }}</span> -->
     </div>
-        <!-- :class="[displayNav==true ? 'fullPageNav' : null,`d-flex flex-column flex-shrink-0 p-3 pt-1 full-sidebar`]" -->
+    <!-- :class="[displayNav==true ? 'fullPageNav' : null,`d-flex flex-column flex-shrink-0 p-3 pt-1 full-sidebar`]" -->
 
     <main v-else>
       <div
@@ -174,11 +174,7 @@
               <use xlink:href="#chevron-double-right" />
             </svg>
           </span>
-          <span
-            v-else
-            class="toggler-btn"
-            @click="hideNavbarOnSmallScreen()"
-          >
+          <span v-else class="toggler-btn" @click="hideNavbarOnSmallScreen()">
             <svg
               class="bi ms-3"
               width="16"
@@ -196,7 +192,7 @@
             v-for="(menu, index) in sidebarMenus[1]"
             :key="index"
           >
-            <router-link :to="menu.route"  class="nav-link" >
+            <router-link :to="menu.route" class="nav-link">
               <svg class="bi me-2" width="16" height="16">
                 <use :href="`#${menu.menuIcon}`" />
               </svg>
@@ -263,9 +259,7 @@
             v-for="(menu, index) in sidebarMenus[1]"
             :key="index"
           >
-            <router-link :to="menu.route"
-              class="nav-link py-3 border-bottom"
-            >
+            <router-link :to="menu.route" class="nav-link py-3 border-bottom">
               <svg
                 class="bi"
                 width="24"
@@ -326,11 +320,15 @@ const props = defineProps({
         [{ appName: "Worklogger", appIcon: "bootstrap" }],
         [
           { menuName: "Add Logs", menuIcon: "plus", route: "add-logs" },
-          { menuName: "Dasboard", menuIcon: "speedometer2", route: "dashboard" },
+          {
+            menuName: "Dasboard",
+            menuIcon: "speedometer2",
+            route: "dashboard",
+          },
           { menuName: "Your Activity", menuIcon: "table", route: "" },
-          { menuName: "Settings", menuIcon: "setting", route: ""},
-          { menuName: "Billing", menuIcon: "grid",route: "" },
-          { menuName: "Users", menuIcon: "people-circle",route: "" },
+          { menuName: "Settings", menuIcon: "setting", route: "" },
+          { menuName: "Billing", menuIcon: "grid", route: "" },
+          { menuName: "Users", menuIcon: "people-circle", route: "" },
         ],
       ];
     },
@@ -505,7 +503,7 @@ main {
   .menu-bars {
     // background-color: rgb(94, 94, 94) !important;
     border: none;
-    color:  rgb(94, 94, 94);
+    color: rgb(94, 94, 94);
   }
   .nav-item svg {
     width: 60px;

@@ -5,16 +5,13 @@
     <div class="container-fluid app-table">
       <div class="row">
         <div class="col-md-8">
-          
           <searchbox />
         </div>
         <div class="col-md-4 text-end float-right">
-          <button class="app-btn">
-            Add Logs
-          </button>
+          <button class="app-btn">Add Logs</button>
         </div>
       </div>
-      <hr>
+      <hr />
       <div class="row">
         <app-table />
       </div>

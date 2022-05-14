@@ -1,14 +1,14 @@
 <template>
-    <div class="breadcrumbs">
-      <ul>
-        <li v-for="(breadcrumb, index) in breadcrumbData" :key="index">
-          <router-link aria-label="home" :to="`${breadcrumb.linkTo}`"
-            ><i :class="`${breadcrumb.icon}`"></i>
-            {{ breadcrumb.name }}
-          </router-link>
-        </li>
-      </ul>
-    </div>
+  <div class="breadcrumbs">
+    <ul>
+      <li v-for="(breadcrumb, index) in breadcrumbData" :key="index">
+        <router-link aria-label="home" :to="`${breadcrumb.linkTo}`"
+          ><i :class="`${breadcrumb.icon}`"></i>
+          {{ breadcrumb.name }}
+        </router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
